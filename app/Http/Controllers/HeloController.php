@@ -13,8 +13,8 @@ class HeloController extends Controller
      */
     public function index()
     {
-        $data = ["me" => "GuehGanteng"];
-        
+        $data = ["me"=>"Tidak Ada"];
+
         return $data;
     }
 

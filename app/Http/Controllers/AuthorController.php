@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Siswa;
+use App\Models\Authors;
 
-class SiswaController extends Controller
+class AuthorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        $data = Siswa::all();
+        $data = Authors::all();
 
         return $data;
     }
@@ -27,10 +27,10 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        $data = Siswa::create($request->all());
+        $data = Authors::create($request->all());
         $data->save();
 
-        $data_akhir = Siswa::all();
+        $data_akhir = Authors::all();
         return $data_akhir;
     }
 
@@ -42,8 +42,8 @@ class SiswaController extends Controller
      */
     public function show($id)
     {
-        $siswa_show = Siswa::findOrFail($id);
-        return $siswa_show;
+        $authors_show = Authors::findOrFail($id);
+        return $authors_show;
     }
 
     /**
@@ -55,11 +55,11 @@ class SiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $siswa_update = Siswa::findOrFail($id);
-        $siswa_update->update($request->all());
-        $siswa_update->save();
+        $authors_update = Authors::findOrFail($id);
+        $authors_update->update($request->all());
+        $authors_update->save();
 
-        $data = Siswa::all();
+        $data = Authors::all();
         return $data;
     }
 
@@ -71,10 +71,10 @@ class SiswaController extends Controller
      */
     public function destroy($id)
     {
-        $siswa_delete = Siswa::findOrFail($id);
-        $siswa_delete->delete();
+        $authors_delete = Authors::findOrFail($id);
+        $authors_delete->delete();
 
-        $data = Siswa::all();
+        $data = Authors::all();
         return $data;
     }
 }
